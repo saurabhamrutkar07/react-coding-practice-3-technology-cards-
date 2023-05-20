@@ -37,52 +37,20 @@ const cardsList = [
   },
 ];
 
-function App() {
-  return (
-    <div className="App p-5">
-      <h1>Learn 4.0 Technologies</h1>
-      <p>
-        Get trained by alumni of IITs and top companies like Amazon, Microsoft,{" "}
-        Intel, Nvidia, Qualcomm, etc. Learn directly from professionals involved
-        in product development
-      </p>
-      <ul>
-        <div className="card-container">
-          <li>
-            <CardItem
-              key={cardsList[0].id}
-              cardDetails={cardsList[0]}
-              imgId={cardsList[0].id}
-            />
-          </li>
-          <li>
-            <CardItem
-              key={cardsList[1].id}
-              cardDetails={cardsList[1]}
-              imgId={cardsList[1].id}
-            />
-          </li>
-        </div>
-
-        <div className="card-container">
-          <li>
-            <CardItem
-              key={cardsList[2].id}
-              cardDetails={cardsList[2]}
-              imgId={cardsList[2].id}
-            />
-          </li>
-          <li>
-            <CardItem
-              key={cardsList[3].id}
-              cardDetails={cardsList[3]}
-              imgId={cardsList[3].id}
-            />
-          </li>
-        </div>
-      </ul>
-    </div>
-  );
-}
+const App = () => (
+  <div className="App">
+    <h1>Learn 4.0 Technologies</h1>
+    <p>
+      Get trained by alumni of IITs and top companies like Amazon, Microsoft,
+      Intel, Nvidia, Qualcomm etc. Learn directly from professionals involved in
+      product development
+    </p>
+    <ul>
+      {cardsList.map((item) => (
+        <CardItem key={item.id} cardDetails={item} />
+      ))}
+    </ul>
+  </div>
+);
 
 export default App;
